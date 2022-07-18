@@ -2,7 +2,7 @@
   
   ### <div align=center> 🛠️ 샘플 운영 환경 🛠️
   
-<div align=center><img src="https://img.shields.io/badge/Docker 20.10.12-FFFFFF?style=flat&logo=Docker&logoColor=2496ED"/>
+<div align=center><img src="https://img.shields.io/badge/Docker 20.10.17-FFFFFF?style=flat&logo=Docker&logoColor=2496ED"/>
   
 <div align=center><img src="https://img.shields.io/badge/Python 3.10-FFFFFF?style=flat&logo=Python&logoColor=3776AB"/> <img src="https://img.shields.io/badge/FastAPI 0.79.0-FFFFFF?style=flat&logo=FastAPI&logoColor=009688"/>
   
