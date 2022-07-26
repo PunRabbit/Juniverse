@@ -4,13 +4,11 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Config(object):
+class BaseConfig(object):
     load_dotenv(
         dotenv_path="./.env",
         verbose=True
     )
-
-    print(os.getenv("DEFAULT_BRIDGE"))
 
     DEFAULT_BRIDGE: str = os.getenv("DEFAULT_BRIDGE")
     SERVER_URL: str = os.getenv("SERVER_URL")
@@ -18,4 +16,4 @@ class Config(object):
     SERVER_WORKER_NUM: int = int(os.getenv("SERVER_WORKER_NUM"))
 
 
-server_config: Config = Config()
+base_config: BaseConfig = BaseConfig()
