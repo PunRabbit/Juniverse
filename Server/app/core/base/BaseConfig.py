@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(frozen=True)
 class BaseConfig(object):
     load_dotenv(
         dotenv_path="./.env",

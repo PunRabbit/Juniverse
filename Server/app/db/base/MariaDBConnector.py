@@ -3,6 +3,7 @@ from Server.app.core.db.DBConfig import db_config
 from Server.app.db.base.BaseDBAbstract import BaseDBSelectModel,\
     BaseDBDeleteModel, BaseDBInsertModel, BaseDBUpdateModel
 from typing import List, Optional
+from overrides import overrides
 
 
 class MariaDBConnector(BaseDBSelectModel):
@@ -15,6 +16,7 @@ class MariaDBConnector(BaseDBSelectModel):
         self.connection: Optional[pymysql.connect, None] = None
         self.connect()
 
+    @overrides
     def connect(self) -> None:
         self.connection: pymysql.connect = pymysql.connect(
             host=self.host,
@@ -26,9 +28,11 @@ class MariaDBConnector(BaseDBSelectModel):
         assert self._connection_check() is True,\
             "Connection is Empty, Please Check MariaDB Connection"
 
+    @overrides
     def single_select(self, query: str) -> str:
         pass
 
+    @overrides
     def multi_select(self, query: str) -> List[str]:
         pass
 
