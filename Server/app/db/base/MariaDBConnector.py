@@ -7,12 +7,21 @@ from overrides import overrides
 
 
 class MariaDBConnector(BaseDBSelectModel):
+    __slots__ = [
+        "port",
+        "db_name",
+        "host",
+        "user",
+        "__pwd",
+        "connection"
+    ]
+
     def __init__(self):
         self.port: int = db_config.MARIA_DB_PORT
         self.db_name: str = db_config.MARIA_DB_NAME
         self.host: str = db_config.MARIA_DB_HOST
         self.user: str = db_config.MARIA_DB_USER_SELECT
-        self.pwd: str = db_config.MARIA_DB_USER_SELECT_PWD
+        self._pwd: str = db_config.MARIA_DB_USER_SELECT_PWD
         self.connection: Optional[pymysql.connect, None] = None
         self.connect()
 
@@ -23,7 +32,7 @@ class MariaDBConnector(BaseDBSelectModel):
             db=self.db_name,
             port=self.port,
             user=self.user,
-            passwd=self.pwd
+            passwd=self.__pwd
         )
         assert self._connection_check() is True,\
             "Connection is Empty, Please Check MariaDB Connection"
@@ -41,4 +50,12 @@ class MariaDBConnector(BaseDBSelectModel):
             return True
         else:
             return False
+
+    @property
+    def _pwd(self) -> None:
+        return None
+
+    @_pwd.setter
+    def _pwd(self, pwd: str) -> None:
+        self.__pwd: str = pwd
 
