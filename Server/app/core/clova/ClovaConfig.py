@@ -1,11 +1,20 @@
+import os
+from dotenv import load_dotenv
 from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
 class ClovaConfig(object):
-    USER_ID: str = ""
-    USER_PWD: str = ""
+    load_dotenv(
+        dotenv_path="./.env",
+        verbose=True
+    )
+
+    # Based on Naver Clova AI OCR Service
+    USER_ID: str = os.getenv("CLOVA_USER_ID")
+    USER_PWD: str = os.getenv("CLOVA_USER_PWD")
+    USER_TOKEN: str = os.getenv("CLOVA_USER_TOKEN")
 
 
-clova_config: ClovaConfig = ClovaConfig()
+CLOVA_CONFIG: ClovaConfig = ClovaConfig()
 

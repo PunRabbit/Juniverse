@@ -16,4 +16,4 @@ class BaseConfig(object):
     SERVER_WORKER_NUM: int = int(os.getenv("SERVER_WORKER_NUM"))
 
 
-base_config: BaseConfig = BaseConfig()
+BASE_CONFIG: BaseConfig = BaseConfig()
