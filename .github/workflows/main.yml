@@ -16,5 +16,6 @@ jobs:
         password: ${{ secrets.MAIN_SERVER_USER_ACCESS }}
         port: ${{ secrets.MAIN_SERVER_PORT }}
         script: |
+          whoami
           ls -all
 
