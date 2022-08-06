@@ -5,6 +5,8 @@ from starlette.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from Server.app.core.config import server_config
 
+# test
+
 
 app: FastAPI = FastAPI()
 app.add_middleware(
