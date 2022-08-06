@@ -17,5 +17,5 @@ jobs:
         port: ${{ secrets.MAIN_SERVER_PORT }}
         script: |
           whoami
-          ls -all
+          sh JuniverseGitPulling.sh
 
