@@ -18,4 +18,4 @@ jobs:
         script: |
           whoami
           sh JuniverseGitPulling.sh
-
+          ls -alh
