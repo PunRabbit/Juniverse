@@ -1,7 +1,7 @@
 name: remote ssh command
 on:
   push:
-    branches: [ "release" ]
+    branches: [ "test_action" ]
 jobs:
 
   build:
