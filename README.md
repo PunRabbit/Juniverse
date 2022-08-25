@@ -1,3 +1,4 @@
+
 # <div align=center>Welcome to Juniverse!
   
   ### <div align=center> 🛠️ 샘플 운영 환경 🛠️
@@ -23,7 +24,13 @@
 
 <br><br/>
   
-**아직 열심히 작성중입니다! :pen:**
+### <div align=center>**아직 열심히 작성중입니다! :pen:**
+
+<br><br/>
+
+## <div align=center> 프로젝트 세부 안내
+
+#### <div align=center> [<img src="https://img.shields.io/badge/Juniverse The Creative Lab-FFFFFF?style=flat&logo=Notion&logoColor=2496ED"/>](https://www.notion.so/punrabbit/Juniverse-The-Creative-Web-b5c587a2c65e4dc3a471336d39487145)
 
 <br><br/>
 
