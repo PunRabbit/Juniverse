@@ -30,7 +30,7 @@
 
 ## <div align=center> 프로젝트 세부 안내
 
-#### <div align=center> [<img src="https://img.shields.io/badge/Juniverse The Creative Lab-FFFFFF?style=flat&logo=Notion&logoColor=2496ED"/>](https://www.notion.so/punrabbit/Juniverse-The-Creative-Web-b5c587a2c65e4dc3a471336d39487145)
+#### <div align=center> [<img src="https://img.shields.io/badge/Juniverse The Creative Lab-FFFFFF?style=flat&logo=Notion&logoColor=2496ED"/>](https://punrabbit.notion.site/Juniverse-The-Creative-Web-b5c587a2c65e4dc3a471336d39487145)
 
 <br><br/>
 
