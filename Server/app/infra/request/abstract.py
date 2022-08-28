@@ -12,7 +12,7 @@ class RequestModel(metaclass=ABCMeta):
         pass
 
 
-class RequestCustomSettingModule(metaclass=ABCMeta):
+class RequestCustomSettingModel(metaclass=ABCMeta):
     @abstractmethod
     def set_header(self, header: dict) -> None:
         pass

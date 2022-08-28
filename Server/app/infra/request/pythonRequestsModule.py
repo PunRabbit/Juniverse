@@ -1,10 +1,11 @@
 import requests
 from typing import Optional
-from Server.app.infra.request.abstract import RequestModel, RequestCustomSettingModule
+from overrides import overrides
+from Server.app.infra.request.abstract import RequestModel, RequestCustomSettingModel
 from Server.app.infra.request.requestDTO import RequestDTO
 
 
-class PythonRequest(RequestModel, RequestCustomSettingModule):
+class PythonRequestsModule(RequestModel, RequestCustomSettingModel):
     __slots__ = [
         "header",
         "body",
@@ -29,6 +30,7 @@ class PythonRequest(RequestModel, RequestCustomSettingModule):
         self.auth: dict = auth
         self.dto: Optional[RequestDTO, None] = None
 
+    @overrides
     def get_request(self) -> RequestDTO:
         if self._check_before_get_request() is True:
             response: requests.models.Response = requests.get(url=self.url)
@@ -48,18 +50,23 @@ class PythonRequest(RequestModel, RequestCustomSettingModule):
 
         return self.dto
 
+    @overrides
     def post_request(self) -> RequestDTO:
         pass
 
+    @overrides
     def set_header(self, header: dict) -> None:
         pass
 
+    @overrides
     def set_body(self, body: dict) -> None:
         pass
 
+    @overrides
     def set_params(self, params: dict) -> None:
         pass
 
+    @overrides
     def set_auth(self, auth: dict) -> None:
         pass
 
