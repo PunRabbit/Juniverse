@@ -111,3 +111,8 @@
 > - [ ] 결제 요청 전송
 > - [ ] 결제 정상 여부 수신
 
+<br><br/>
+
+## 서버 아키텍처 구상도
+
+![KakaoTalk_Photo_2022-09-07-00-24-23](https://user-images.githubusercontent.com/70463212/188674348-3fdbac64-28ce-4580-ad8b-329083fc8b7a.jpeg)
