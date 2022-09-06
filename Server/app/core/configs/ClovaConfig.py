@@ -16,5 +16,4 @@ class ClovaConfig(object):
     USER_TOKEN: str = os.getenv("CLOVA_USER_TOKEN")
 
 
-CLOVA_CONFIG: ClovaConfig = ClovaConfig()
 

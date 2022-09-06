@@ -1,5 +1,5 @@
 import pymysql
-from Server.app.core.db.DBConfig import DB_CONFIG
+from Server.app.core.configs.DBConfig import DB_CONFIG
 from Server.app.db.base.BaseDBAbstract import BaseDBSelectModel
 from typing import List, Optional
 from overrides import overrides

@@ -18,4 +18,3 @@ class BaseConfig(object):
     SERVER_ALLOW_ORIGIN: str = os.getenv("SERVER_ALLOW_ORIGIN")
 
 
-BASE_CONFIG: BaseConfig = BaseConfig()

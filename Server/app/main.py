@@ -3,7 +3,7 @@ sys.path.append("/Users/jun/Juniverse")
 import uvicorn
 from starlette.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
-from Server.app.core.base.BaseConfig import BASE_CONFIG
+from Server.app.core.configs.BaseConfig import BASE_CONFIG
 
 
 app: FastAPI = FastAPI()
