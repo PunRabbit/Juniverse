@@ -21,7 +21,7 @@ class RequestsModule(RequestModel):
 
     @overrides
     def get_request(self, url: str) -> RequestDTO:
-        if self._params_none_check() is not False:
+        if self._params_none_check() is False:
             request_response: requests.Response = requests.get(
                 url=url,
                 params=self._params,
@@ -37,7 +37,7 @@ class RequestsModule(RequestModel):
 
     @overrides
     def post_request(self, url: str) -> RequestDTO:
-        if self._data_none_check() is not False:
+        if self._data_none_check() is False:
             reqeust_response: requests.Response = requests.post(
                 url=url,
                 data=self._data,
@@ -50,6 +50,30 @@ class RequestsModule(RequestModel):
                 headers=self._headers
             )
             return self._response_to_dto(init_response=request_response)
+
+    @property
+    def params(self):
+        return self._params
+
+    @params.setter
+    def params(self, params: dict):
+        self._params: dict = params
+
+    @property
+    def headers(self):
+        return self._headers
+
+    @headers.setter
+    def headers(self, headers: dict):
+        self._headers: dict = headers
+
+    @property
+    def data(self):
+        return self._data
+
+    @data.setter
+    def data(self, data: dict):
+        self._data: dict = data
 
     @classmethod
     def _response_to_dto(cls, init_response: requests.Response) -> RequestDTO:

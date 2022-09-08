@@ -16,5 +16,8 @@ class ClovaConfig(object):
     USER_TOKEN: str = os.getenv("CLOVA_USER_TOKEN")
     USER_URL_PATH: str = os.getenv("CLOVA_USER_URL_PATH")
 
+    # CLOVA Request Options
+    CLOVA_HEADER: str = os.getenv("CLOVA_HEADER")
+
 
 
