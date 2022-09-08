@@ -39,9 +39,12 @@ class ClovaOCRRequestModule(ClovaOCRModel):
     def inference(self, image_path: str, image_format: str) -> RequestDTO:
         payload: dict = self._build_payload(image_path=image_path, image_format=image_format)
         headers: dict = self._build_headers()
-        self._request_module.data = json.dumps(payload)
-        self._request_module.headers = headers
+        self._implement_data_headers(data=payload, headers=headers)
         return self._request_module.post_request(url=self._url)
+
+    def _implement_data_headers(self, data: dict, headers: dict):
+        self._request_module.data = json.dumps(data)
+        self._request_module.headers = headers
 
     def _build_payload(self, image_path: str, image_format: str) -> dict:
         payload: dict = dict(version=self._version,
