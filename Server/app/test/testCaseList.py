@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from Server.app.infra.request.pythonRequestsModule import PythonRequestsModule
+from Server.app.outer.infra.request.requestsModule import PythonRequestsModule
 
 
 @dataclass(frozen=True)

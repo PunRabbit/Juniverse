@@ -1,14 +1,14 @@
 from abc import ABCMeta, abstractmethod
-from Server.app.infra.request.requestDTO import RequestDTO
+from Server.app.outer.infra.request.requestDTO import RequestDTO
 
 
 class RequestModel(metaclass=ABCMeta):
     @abstractmethod
-    def get_request(self) -> RequestDTO:
+    def get_request(self, url: str) -> RequestDTO:
         pass
 
     @abstractmethod
-    def post_request(self) -> RequestDTO:
+    def post_request(self, url: str) -> RequestDTO:
         pass
 
 

@@ -1,4 +1,4 @@
-from Server.app.db.user.UserAbstract import UserEncryptionModel
+from Server.app.outer.db.user.UserAbstract import UserEncryptionModel
 from Server.app.core.configs.BaseConfig import BASE_CONFIG
 from overrides import overrides
 

@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from Server.app.connection.clova.ClovaTextDTO import ClovaTextDTO
+from Server.app.outer.connection.clova.ClovaTextDTO import ClovaTextDTO
 
 
 class ClovaTextOcrModel(metaclass=ABCMeta):

@@ -4,7 +4,6 @@ from dataclasses import dataclass
 
 @dataclass(frozen=False)
 class RequestDTO:
-    OriginObject: Optional[object]
-    Text: str
-    Json: dict
-    StatusCode: int
+    originObject: Optional[object]
+    text: str
+    statusCode: int

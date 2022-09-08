@@ -3,6 +3,7 @@ sys.path.append("/Users/jun/Juniverse")
 import uvicorn
 from starlette.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
+from slack_sdk import WebClient
 from Server.app.core.compact.CompactConfig import CONFIG
 # from Server.app.core.configs.BaseConfig import BASE_CONFIG
 
@@ -15,6 +16,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
+
+client: WebClient = WebClient(token=CONFIG.SLACK.TOKEN)
+
+client.chat_postMessage(channel='#juniverse',
+                        text='Test with Server Starting Flag')
 
 if __name__ == "__main__":
     uvicorn.run(
