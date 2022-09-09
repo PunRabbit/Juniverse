@@ -4,6 +4,7 @@ from Server.app.core.configs.ClovaConfig import ClovaConfig
 from Server.app.core.configs.DBConfig import DBConfig
 from Server.app.core.configs.UserConfig import UserConfig
 from Server.app.core.configs.SlackConfig import SlackConfig
+from Server.app.core.configs.TeamsConfig import TeamsConfig
 
 
 @dataclass(frozen=False)
@@ -13,6 +14,7 @@ class CompactConfig:
     DB: DBConfig = DBConfig()
     USER: UserConfig = UserConfig()
     SLACK: SlackConfig = SlackConfig()
+    TEAMS: TeamsConfig = TeamsConfig()
 
 
 CONFIG: CompactConfig = CompactConfig()

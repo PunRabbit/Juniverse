@@ -1,11 +1,11 @@
 from unittest import TextTestRunner, TestCase, TestSuite
 from overrides import overrides
 from dataclasses import dataclass
-from Server.app.test.abstract import CombineRunnerModel
-from Server.app.test.testCaseList import TestCaseList
+from Server.app.test.Abstract import CombineRunnerModel
+from Server.app.test.TestCaseList import TestCaseList
 
 
-class CombineRunner(CombineRunnerModel, TextTestRunner):
+class CombineRunnerModule(CombineRunnerModel, TextTestRunner):
     def __init__(self):
         super().__init__()
         self.test_case_list: dataclass = TestCaseList()
