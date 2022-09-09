@@ -22,7 +22,7 @@ class CombineRunner(CombineRunnerModel, TextTestRunner):
 
     @overrides(check_signature=True)
     def start_test(self) -> None:
-        self.run(self.set_runners)
+        self.run(self.set_runners())
 
     def _find_instance_in_dataclass(self) -> list:
         dataclass_attribute_list: list = []
