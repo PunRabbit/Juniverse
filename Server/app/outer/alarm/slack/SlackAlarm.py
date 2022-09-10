@@ -19,6 +19,13 @@ class SlackAlarmModule(AlarmModel):
         self._create_client().chat_postMessage(channel=self._channel,
                                                text=message)
 
+    @overrides
+    def send_alarm_with_template(self, template: str, message: str) -> None:
+        target_template: list = CONFIG.SLACK_TEMPLATES.TEST_TEMPLATES[template]
+        target_template[2]["text"]["text"]: str = message
+        self._create_client().chat_postMessage(channel=self._channel,
+                                               blocks=target_template)
+
     def _create_client(self) -> WebClient:
         return WebClient(token=self._token)
 

@@ -17,3 +17,7 @@ class TeamsAlarmModule(AlarmModel):
     @overrides
     def send_alarm(self, message: str) -> None:
         pass
+
+    @overrides
+    def send_alarm_with_template(self, template: str, message: str) -> None:
+        pass
