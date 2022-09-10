@@ -1,6 +1,6 @@
 import pymysql
-from Server.app.core.db.DBConfig import DB_CONFIG
-from Server.app.db.base.BaseDBAbstract import BaseDBSelectModel
+from Server.app.core.configs.DBConfig import DB_CONFIG
+from Server.app.outer.db.base.BaseDBAbstract import BaseDBSelectModel
 from typing import List, Optional
 from overrides import overrides
 
@@ -16,11 +16,11 @@ class MariaDBConnector(BaseDBSelectModel):
     ]
 
     def __init__(self):
-        self.port: int = db_config.MARIA_DB_PORT
-        self.db_name: str = db_config.MARIA_DB_NAME
-        self.host: str = db_config.MARIA_DB_HOST
-        self.user: str = db_config.MARIA_DB_USER_SELECT
-        self._pwd: str = db_config.MARIA_DB_USER_SELECT_PWD
+        self.port: int = DB_CONFIG.MARIA_DB_PORT
+        self.db_name: str = DB_CONFIG.MARIA_DB_NAME
+        self.host: str = DB_CONFIG.MARIA_DB_HOST
+        self.user: str = DB_CONFIG.MARIA_DB_USER_SELECT
+        self._pwd: str = DB_CONFIG.MARIA_DB_USER_SELECT_PWD
         self.connection: Optional[pymysql.connect, None] = None
         self.connect()
 

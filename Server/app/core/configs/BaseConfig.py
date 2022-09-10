@@ -15,6 +15,6 @@ class BaseConfig(object):
     SERVER_PORT: int = int(os.getenv("SERVER_PORT"))
     SERVER_WORKER_NUM: int = int(os.getenv("SERVER_WORKER_NUM"))
     SERVER_BCRYPT_KEY: str = os.getenv("SERVER_BCRYPT_KEY")
+    SERVER_ALLOW_ORIGIN: str = os.getenv("SERVER_ALLOW_ORIGIN")
 
 
-BASE_CONFIG: BaseConfig = BaseConfig()

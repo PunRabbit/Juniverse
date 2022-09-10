@@ -1,7 +1,5 @@
-from typing import Optional
-from dataclasses import dataclass
-from Server.app.db.user.UserEncryption import UserBcrypt
-from Server.app.db.user.UserAbstract import UserEncryptionModel
+from Server.app.outer.db.user.UserEncryption import UserBcrypt
+from Server.app.outer.db.user.UserAbstract import UserEncryptionModel
 
 
 class UserDTO(object):

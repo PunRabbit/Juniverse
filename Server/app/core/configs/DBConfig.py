@@ -30,5 +30,3 @@ class DBConfig(object):
     MARIA_DB_USER_DELETE: str = os.getenv("MARIA_DB_USER_DELETE")
     MARIA_DB_USER_DELETE_PWD: str = os.getenv("MARIA_DB_USER_DELETE_PWD")
 
-
-DB_CONFIG: DBConfig = DBConfig()
