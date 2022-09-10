@@ -7,7 +7,7 @@ from Server.app.test.TestCaseList import TestCaseList
 
 class CombineRunnerModule(CombineRunnerModel, TextTestRunner):
     def __init__(self):
-        super().__init__()
+        super().__init__(verbosity=2)
         self.test_case_list: dataclass = TestCaseList()
 
     @overrides(check_signature=True)
