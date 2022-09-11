@@ -13,6 +13,11 @@ class SlackAlarmTest(TestCase):
         success_slack_test_instance: AlarmModel = SlackAlarmModule(target_channel="juniverse")
         success_slack_test_instance.send_alarm(message="Test Message Before Server Load")
 
+    def test_alarm_success_with_template(self):
+        success_slack_test_instance: AlarmModel = SlackAlarmModule(target_channel="juniverse")
+        success_slack_test_instance.send_alarm_with_template(template="test_template",
+                                                             message="테스트 성공입니다!")
+
 
 
 
