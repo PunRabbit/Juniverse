@@ -6,7 +6,7 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from Server.app.core.compact.CompactConfig import CONFIG
-from Server.app.test.CombineRunner import CombineRunnerModule
+from Server.app.test.compactRunner.CompactRunner import CompactRunnerModule
 
 
 app: FastAPI = FastAPI()
@@ -20,7 +20,7 @@ app.add_middleware(
 
 
 if __name__ == "__main__":
-    CombineRunnerModule().start_test()
+    CompactRunnerModule().start_test()
     uvicorn.run(
         CONFIG.BASE.DEFAULT_BRIDGE,
         host=CONFIG.BASE.SERVER_URL,
