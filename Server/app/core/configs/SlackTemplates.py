@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
-from Server.app.core.ConfigAbstract import ConfigClass
+from Server.app.core.ConfigAbstract import TemplateClass
 
 
 @dataclass(frozen=False)
-class SlackTemplates(ConfigClass):
+class SlackTemplates(TemplateClass):
     TEST_TEMPLATES: dict = field(default_factory=lambda: dict(
         test_template=[
             {

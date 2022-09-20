@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from Server.app.core.ConfigAbstract import ConfigClass
+from typing import Union
+from Server.app.core.ConfigAbstract import ConfigClass, CompactConfigClass, TemplateClass
 from Server.app.core.configs.BaseConfig import BaseConfig
 from Server.app.core.configs.ClovaConfig import ClovaConfig
 from Server.app.core.configs.DBConfig import DBConfig
@@ -11,13 +12,13 @@ from Server.app.core.configs.SlackTemplates import SlackTemplates
 
 @dataclass(frozen=False)
 class CompactConfig:
-    BASE: ConfigClass = BaseConfig()
-    CLOVA: ConfigClass = ClovaConfig()
-    DB: ConfigClass = DBConfig()
-    USER: ConfigClass = UserConfig()
-    SLACK: ConfigClass = SlackConfig()
-    TEAMS: ConfigClass = TeamsConfig()
-    SLACK_TEMPLATES: ConfigClass = SlackTemplates()
+    BASE: Union[ConfigClass, BaseConfig] = BaseConfig()
+    CLOVA: Union[ConfigClass, ClovaConfig] = ClovaConfig()
+    DB: Union[ConfigClass, DBConfig] = DBConfig()
+    USER: Union[ConfigClass, UserConfig] = UserConfig()
+    SLACK: Union[ConfigClass, SlackConfig] = SlackConfig()
+    TEAMS: Union[ConfigClass, TeamsConfig] = TeamsConfig()
+    SLACK_TEMPLATES: Union[TemplateClass, SlackTemplates] = SlackTemplates()
 
 
-CONFIG: CompactConfig = CompactConfig()
+CONFIG: Union[CompactConfigClass, CompactConfig] = CompactConfig()
