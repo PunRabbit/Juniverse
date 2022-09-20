@@ -60,3 +60,12 @@ class BaseDBDeleteModel(metaclass=ABCMeta):
     @abstractmethod
     def truncate(self) -> bool:
         pass
+
+
+class DataToDTO(metaclass=ABCMeta):
+    """
+    Error는 내부에서 Assert로 잡아낼 것
+    """
+    @abstractmethod
+    def convert(self) -> None:
+        pass
