@@ -1,10 +1,11 @@
 import os
 from dotenv import load_dotenv
 from dataclasses import dataclass
+from Server.app.core.ConfigAbstract import ConfigClass
 
 
 @dataclass(frozen=True)
-class DBConfig(object):
+class DBConfig(ConfigClass):
     load_dotenv(
         dotenv_path="./.env",
         verbose=True
