@@ -1,5 +1,7 @@
 import sys
-sys.path.append("/Users/jun/Juniverse")
+import os
+sys.path.append(os.getcwd()[:-11])
+
 import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
