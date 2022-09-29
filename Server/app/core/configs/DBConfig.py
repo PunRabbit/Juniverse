@@ -21,6 +21,11 @@ class DBConfig(ConfigClass):
     REDIS_DB_HOST: str = os.getenv("REDIS_DB_HOST")
     REDIS_DB_NAME: str = os.getenv("REDIS_DB_NAME")
 
+    # Base Option that Only for Develop
+    MARIA_DB_DEVELOP_USER_NAME: str = os.getenv("MARIA_DB_DEVELOP_USER_NAME")
+    MARIA_DB_DEVELOP_USER_PWD: str = os.getenv("MARIA_DB_DEVELOP_USER_PWD")
+    MARIA_DB_DEVELOP_DB_NAME: str = os.getenv("MARIA_DB_DEVELOP_DB_NAME")
+
     # Separate Access Level
     MARIA_DB_USER_SELECT: str = os.getenv("MARIA_DB_USER_SELECT")
     MARIA_DB_USER_SELECT_PWD: str = os.getenv("MARIA_DB_USER_SELECT_PWD")

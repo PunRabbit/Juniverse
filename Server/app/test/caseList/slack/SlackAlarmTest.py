@@ -1,9 +1,10 @@
 from unittest import TestCase
+from Server.app.test.caseList.TestCaseAbstract import CustomCaseTest
 from Server.app.infra.alarm.slack.SlackAlarm import SlackAlarmModule
 from Server.app.infra.alarm.AlarmAbstract import AlarmModel
 
 
-class SlackAlarmTest(TestCase):
+class SlackAlarmTest(TestCase, CustomCaseTest):
     def test_alarm_error(self):
         error_slack_test_instance: AlarmModel = SlackAlarmModule(target_channel="error")
         with self.assertRaises(Exception):

@@ -1,12 +1,13 @@
 from unittest import TestCase
 from unittest.mock import patch
+from Server.app.test.caseList.TestCaseAbstract import CustomCaseTest
 from Server.app.infra.ai.AiAbstract import OCRModel
 from Server.app.infra.ai.clova.ClovaRequest import ClovaOCRRequestModule
 from Server.app.infra.customRequest.pythonRequests.requestsModule import RequestsModule
 from Server.app.infra.customRequest.RequestDTO import RequestDTO
 
 
-class ClovaRequestTest(TestCase):
+class ClovaRequestTest(TestCase, CustomCaseTest):
     def test_error_case(self):
         clova_error_instance: OCRModel = ClovaOCRRequestModule(request_module=RequestsModule())
         response_dto: RequestDTO = clova_error_instance.inference(image_path="1",
