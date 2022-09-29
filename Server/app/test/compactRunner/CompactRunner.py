@@ -1,4 +1,4 @@
-from unittest import TextTestRunner, TestCase, TestSuite
+from unittest import TextTestRunner, TestCase, TestSuite, TestResult
 from overrides import overrides
 from dataclasses import dataclass
 from Server.app.test.RunnerAbstract import CompactRunnerModel
@@ -7,6 +7,7 @@ from Server.app.test.caseList.TestCaseList import TestCaseList
 
 class CompactRunnerModule(CompactRunnerModel, TextTestRunner):
     def __init__(self):
+        # super().__init__(verbosity=2, failfast=True)
         super().__init__(verbosity=2)
         self.test_case_list: dataclass = TestCaseList()
 
@@ -21,8 +22,9 @@ class CompactRunnerModule(CompactRunnerModel, TextTestRunner):
         return suite
 
     @overrides(check_signature=True)
-    def start_test(self) -> None:
-        self.run(self.set_runners())
+    def start_test(self) -> TestResult:
+        result = self.run(self.set_runners())
+        return result
 
     def _find_instance_in_dataclass(self) -> list:
         dataclass_attribute_list: list = []
