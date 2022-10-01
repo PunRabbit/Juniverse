@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from unittest import TestSuite
+from unittest import TestSuite, TestResult
 
 
 class CompactRunnerModel(metaclass=ABCMeta):
@@ -8,5 +8,5 @@ class CompactRunnerModel(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def start_test(self) -> None:
+    def start_test(self) -> TestResult:
         pass
