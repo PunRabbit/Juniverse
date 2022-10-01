@@ -36,3 +36,6 @@ class DBConfig(ConfigClass):
     MARIA_DB_USER_DELETE: str = os.getenv("MARIA_DB_USER_DELETE")
     MARIA_DB_USER_DELETE_PWD: str = os.getenv("MARIA_DB_USER_DELETE_PWD")
 
+    # CONFIG FOR SQLALCHEMY
+    SQLALCHEMY_ADDRESS: str = os.getenv("SQLALCHEMY_ADDRESS")
+

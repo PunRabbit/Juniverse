@@ -8,7 +8,7 @@ from Server.app.infra.db.mariaDB.MariaDBDecorator import check_connection
 
 class MariaDBQueryModule(QueryDBModel):
     __slots__ = [
-        'connection'
+        "connection"
     ]
 
     def __init__(self):
