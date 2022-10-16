@@ -23,7 +23,14 @@ class CompactRunnerModule(CompactRunnerModel, TextTestRunner):
 
     @overrides(check_signature=True)
     def start_test(self) -> TestResult:
+        # import coverage
+        #
+        # cov = coverage.Coverage()
+        # cov.start()
         result = self.run(self.set_runners())
+        # cov.stop()
+        # cov.save()
+        # cov.report()
         return result
 
     def _find_instance_in_dataclass(self) -> list:

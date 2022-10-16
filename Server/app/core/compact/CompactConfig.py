@@ -8,6 +8,7 @@ from Server.app.core.configs.UserConfig import UserConfig
 from Server.app.core.configs.SlackConfig import SlackConfig
 from Server.app.core.configs.TeamsConfig import TeamsConfig
 from Server.app.core.configs.SlackTemplates import SlackTemplates
+from Server.app.core.configs.TestConfig import TestConfig
 
 
 @dataclass(frozen=False)
@@ -19,6 +20,7 @@ class CompactConfig:
     SLACK: Union[ConfigClass, SlackConfig] = SlackConfig()
     TEAMS: Union[ConfigClass, TeamsConfig] = TeamsConfig()
     SLACK_TEMPLATES: Union[TemplateClass, SlackTemplates] = SlackTemplates()
+    TEST: Union[TemplateClass, TestConfig] = TestConfig()
 
 
 CONFIG: Union[CompactConfigClass, CompactConfig] = CompactConfig()
