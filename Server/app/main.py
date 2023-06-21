@@ -1,26 +1,23 @@
 import sys
-sys.path.append("./../../../Juniverse")
-import uvicorn
-from starlette.middleware.cors import CORSMiddleware
+import os
 from fastapi import FastAPI
-from Server.app.core.config import server_config
+from starlette.middleware.cors import CORSMiddleware
+
+sys.path.append(os.getcwd()[:-11])
+
+from Server.app.core.compact.CompactConfig import CONFIG
+from Server.app.runner.MainRunner import main_run
 
 
 app: FastAPI = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[CONFIG.BASE.SERVER_ALLOW_ORIGIN],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
 )
 
-if __name__ == "__main__":
-    uvicorn.run(
-        server_config.DEFAULT_BRIDGE,
-        host=server_config.SERVER_URL,
-        port=server_config.SERVER_PORT,
-        workers=server_config.SERVER_WORKER_NUM,
-        reload=True
-    )
 
+if __name__ == "__main__":
+    main_run()
