@@ -1,13 +1,12 @@
 import sys
 import os
-sys.path.append(os.getcwd()[:-11])
-
-import uvicorn
-from unittest import TestResult
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+
+sys.path.append(os.getcwd()[:-11])
+
 from Server.app.core.compact.CompactConfig import CONFIG
-from Server.app.test.compactRunner.CompactRunner import CompactRunnerModule
+from Server.app.runner.MainRunner import main_run
 
 
 app: FastAPI = FastAPI()
@@ -21,16 +20,4 @@ app.add_middleware(
 
 
 if __name__ == "__main__":
-    test_result: TestResult = CompactRunnerModule().start_test()
-    if test_result.wasSuccessful() is True:
-        uvicorn.run(
-            CONFIG.BASE.DEFAULT_BRIDGE,
-            host=CONFIG.BASE.SERVER_URL,
-            port=CONFIG.BASE.SERVER_PORT,
-            workers=CONFIG.BASE.SERVER_WORKER_NUM,
-            reload=True
-        )
-    else:
-        sys.exit(1)
-
-
+    main_run()
