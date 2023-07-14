@@ -1,0 +1,13 @@
+[dev]
+[dev.middleware]
+allow_origins = ["*"]
+allow_credentials = true
+allow_methods = ["*"]
+allow_headers = ["*"]
+[dev.run]
+host = "0.0.0.0"
+port = 8442
+workers = 1
+reload = false
+
+[live]
