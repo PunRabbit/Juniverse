@@ -8,16 +8,16 @@ from pprint import pprint
 
 from src.api.constructor import ApiConstructor
 from src.tool.app.app import RunConfig, MiddlewareConfig
-from src.container.app.initialConfigContainer import InitialConfigContainer
+from src.container.app.appInitializeContainer import AppInitializeContainer
 
 
 class AppCreator:
     @inject
     def __init__(
             self,
-            run_config: RunConfig = Provide[InitialConfigContainer.run_config],
-            middleware_config: MiddlewareConfig = Provide[InitialConfigContainer.middleware_config],
-            app_routers: ApiConstructor = Provide[InitialConfigContainer.api_routers]
+            run_config: RunConfig = Provide[AppInitializeContainer.run_config],
+            middleware_config: MiddlewareConfig = Provide[AppInitializeContainer.middleware_config],
+            app_routers: ApiConstructor = Provide[AppInitializeContainer.api_routers]
     ):
         self._run_config: RunConfig = run_config
         self._middleware_config: MiddlewareConfig = middleware_config

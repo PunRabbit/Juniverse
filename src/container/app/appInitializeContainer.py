@@ -4,18 +4,13 @@ from dependency_injector.containers import DeclarativeContainer, WiringConfigura
 from dependency_injector.providers import Singleton
 
 from src.tool.app.app import MiddlewareConfig, RunConfig
-from src.tool.app.appArgParser import create_parser
+from src.tool.app.appArgParser import parse_args
 from src.api.constructor import ApiConstructor
 
 
-class InitialConfigContainer(DeclarativeContainer):
+class AppInitializeContainer(DeclarativeContainer):
     with open("core/app/appConfig.toml", "r") as config_file:
         toml_config: dict = tomlkit.load(config_file)
-
-    parse_args: argparse.Namespace = create_parser()
-
-    if parse_args.runtime not in ["dev", "live"]:
-        raise Exception("Please write down runtime dev envs.")
 
     middleware_config: MiddlewareConfig = Singleton(
         MiddlewareConfig,
